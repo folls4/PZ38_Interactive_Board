@@ -1,0 +1,257 @@
+:root {
+  --bg: #f3f6fd;
+  --ink: #14213b;
+  --muted: #697894;
+  --line: #dde5f2;
+  --white: #fff;
+  --accent: #5065eb;
+  --soft: #eaf0ff;
+  --ok: #159478;
+  --red: #c84262;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+.tile:focus-visible {
+  outline: 3px solid #f8b84d;
+  outline-offset: 3px;
+}
+.shell {
+  width: min(1050px, calc(100% - 40px));
+  margin: 42px auto 64px;
+}
+.topline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--accent);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+.brand {
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  font-size: 14px;
+}
+.eyebrow {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+h1 {
+  font-size: clamp(32px, 5vw, 53px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  margin: 0 0 14px;
+}
+h2 {
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+p {
+  line-height: 1.55;
+}
+.lead {
+  max-width: 680px;
+  color: var(--muted);
+  margin: 0 0 28px;
+  font-size: 17px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.panel {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 14px 40px rgba(25, 41, 88, 0.045);
+}
+.panel.wide {
+  grid-column: 1/-1;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 12px 17px;
+  font-weight: 750;
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.btn.danger {
+  color: var(--red);
+}
+.btn:hover {
+  filter: brightness(0.97);
+}
+.input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  background: #f8faff;
+  border-radius: 12px;
+  min-height: 46px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.input-row .input {
+  flex: 1;
+  min-width: 0;
+}
+.stat {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+}
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+.status {
+  border-radius: 14px;
+  background: var(--soft);
+  padding: 14px 18px;
+  min-height: 51px;
+  color: #344c8c;
+  margin-top: 18px;
+}
+.demo {
+  border: 2px dashed #b8c7eb;
+  background: #f8faff;
+  border-radius: 18px;
+  min-height: 175px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 18px;
+}
+.chip {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background: var(--soft);
+  color: #344c8c;
+  font-size: 12px;
+  font-weight: 750;
+}
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 24px, 560px);
+    margin: 24px auto;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    padding: 20px;
+  }
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.head-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.head-flex h2 {
+  margin: 0;
+}
+.ideas-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.idea-card {
+  min-height: 125px;
+  background: #f7f9ff;
+  border: 2px solid #dce5f5;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  font-weight: 800;
+}
+.idea-card.is-hidden {
+  display: none;
+}
+.fav-button {
+  align-self: flex-end;
+  border: 0;
+  border-radius: 9px;
+  background: #e8edfc;
+  color: #5267e9;
+  width: 38px;
+  height: 38px;
+  font-size: 27px;
+}
+.fav-button.is-favorite {
+  background: #fff1ca;
+  color: #bb7b0a;
+}
+@media (max-width: 760px) {
+  .ideas-list {
+    grid-template-columns: 1fr;
+  }
+}

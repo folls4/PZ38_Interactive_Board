@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Интерактивная доска идей</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="grid">
+        <section class="panel wide">
+          <h2>Поиск по идеям</h2>
+          <input
+            id="search-input"
+            class="input"
+            placeholder="Например, дизайн"
+            aria-label="Поиск по идеям"
+          />
+          <p class="small">Esc очищает поиск.</p>
+        </section>
+        <section class="panel wide">
+          <h2>Добавить идею</h2>
+          <form id="idea-form" class="input-row">
+            <input
+              id="idea-input"
+              class="input"
+              placeholder="Название новой идеи"
+              maxlength="60"
+            /><button class="btn primary" type="submit">Добавить</button>
+          </form>
+        </section>
+        <section class="panel wide">
+          <div class="head-flex">
+            <h2>Доска идей</h2>
+            <span class="chip"
+              >В избранном:
+              <span id="favorite-count" style="margin-left: 5px">0</span></span
+            >
+          </div>
+          <ul id="ideas-list" class="ideas-list">
+            <li class="idea-card" data-title="Дизайн портфолио">
+              <span>Дизайн портфолио</span
+              ><button
+                class="fav-button"
+                type="button"
+                aria-label="Добавить в избранное"
+                aria-pressed="false"
+              >
+                ☆
+              </button>
+            </li>
+            <li class="idea-card" data-title="Анимация кнопки">
+              <span>Анимация кнопки</span
+              ><button
+                class="fav-button"
+                type="button"
+                aria-label="Добавить в избранное"
+                aria-pressed="false"
+              >
+                ☆
+              </button>
+            </li>
+            <li class="idea-card" data-title="Галерея фотографий">
+              <span>Галерея фотографий</span
+              ><button
+                class="fav-button"
+                type="button"
+                aria-label="Добавить в избранное"
+                aria-pressed="false"
+              >
+                ☆
+              </button>
+            </li>
+          </ul>
+          <p id="board-status" class="status" aria-live="polite">
+            Выберите действие.
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
